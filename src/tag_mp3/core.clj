@@ -7,12 +7,12 @@
 
 (declare auto-tag tag-dir)
 
-(def test-dir "/home/michael/music/KRNE/Zero Zero One")
+(def music-folder "/home/michael/music/")
 
 (defn auto-tag
   "Default format: NUMBER TITLE - ARTIST" ; FIXME: Custom formats
   [file]
-  (println (.getName file))
+  (println "Tagging "(.getName file))
   (if (.isDirectory file)
     (tag-dir file)
     (let [tags (string/split (.getName file) #"\s+")
@@ -25,16 +25,14 @@
       (.setArtist tag artist)
       (.setTitle tag title)
       (.setID3Tag media-file tag)
-      (.sync media-file)
-      (println "Tagging " (.getName file)))))
+      (.sync media-file))))
 
 (defn tag-dir
   "Tags an entire directory."
   [dir]
   (if (.isDirectory dir)
     (let [files (u/get-mp3s dir)]
-      (println files)
-      (map auto-tag files)) ; FIXME
+      (doseq [file files] (auto-tag file)))
     (println "ERROR: " (.getName dir) " is not a directory!!")))
 
 (defn -main
