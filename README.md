@@ -1,36 +1,20 @@
 # tag-mp3
 
-FIXME: description
+Tags mp3 files.
 
 ## Installation
 
-Download from http://example.com/FIXME.
+    $ git clone https://github.com/audererm/tag-mp3
+    $ cd tag-mp3
+    $ lein run
 
 ## Usage
 
 FIXME: explanation
 
-    $ java -jar tag-mp3-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
+    $ lein run
 
 ## License
-
-Copyright © 2014 FIXME
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
