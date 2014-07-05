@@ -9,10 +9,6 @@
 
 (def test-dir "/home/michael/music/KRNE/Zero Zero One")
 
-(defn grab-file
-  [file]
-  (io/file (.getAbsolutePath file)))
-
 (defn auto-tag
   "Default format: NUMBER TITLE - ARTIST" ; FIXME: Custom formats
   [file]
